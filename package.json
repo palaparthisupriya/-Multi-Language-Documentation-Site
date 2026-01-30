@@ -1,0 +1,36 @@
+{
+  "name": "docs-portal",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "flexsearch": "^0.8.212",
+    "lucide-react": "^0.563.0",
+    "markdown-it": "^14.1.0",
+    "next": "16.1.4",
+    "next-intl": "^4.7.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "swagger-ui-react": "^5.31.0",
+    "tailwind-merge": "^3.4.0",
+    "zustand": "^5.0.10"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/swagger-ui-react": "^5.18.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.4",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

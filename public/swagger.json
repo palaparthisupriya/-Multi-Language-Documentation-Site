@@ -1,0 +1,17 @@
+﻿{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Partnr API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/docs": {
+      "get": {
+        "summary": "Get all documentation",
+        "responses": {
+          "200": { "description": "OK" }
+        }
+      }
+    }
+  }
+}
