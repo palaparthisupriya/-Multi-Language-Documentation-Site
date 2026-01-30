@@ -1,55 +1,33 @@
-## Partnr Documentation Portal
-A high-performance, multi-language documentation site built with Next.js 15, featuring ISR, i18n, and Docker containerization.
+## DocsPortal: Multilingual Documentation System
+This project is a high-performance documentation portal built with Next.js 15+, Docker, and next-intl. It dynamically renders Markdown content from a structured file system, supporting multiple versions and languages.
 
-## Quick Start
-## Environment Setup
+##  Getting Started
+1. Prerequisites
+Docker Desktop (with at least 4GB RAM allocated in Settings > Resources).
 
-Bash
+Node.js 20+ (for local development).
 
-cp .env.example .env
-## Launch with Docker
+2. Installation & Build
+To build and run the portal inside a Docker container:
 
-Bash
+PowerShell
+# Build with fresh cache to ensure all .md files are synced
+docker-compose build --no-cache
 
-docker-compose up --build
-## Access Points
+# Start the container
+docker-compose up -d
+3. Access the Portal
+URL: http://localhost:3000/en/docs/v1/introduction
 
-* Documentation: http://localhost:3000/en/docs/v1/introduction
+Languages: Switch between en, es, fr, and de via the header buttons.
 
-* API Reference: http://localhost:3000/en/api-reference
+## Tech Stack & Key Features
+Framework: Next.js 15+ (App Router) with Turbopack support.
 
-## Features
-Internationalization (i18n): Full support for English (en), Spanish (es), French (fr), and German (de).
+Internationalization: next-intl for seamless locale switching.
 
-* Versioning: Documentation versions v1, v2, and v3 supported via dynamic URL structure.
+Content: next-mdx-remote/rsc for server-side Markdown rendering.
 
-* ISR: Pages revalidate every 60 seconds to ensure content freshness without sacrificing performance.
+Deployment: Optimized node:20-slim Docker image.
 
-* Search: Client-side full-text search with results and no-results states.
-
-* Interactive UI: Includes Theme Toggling (Dark/Light), Table of Contents, and Feedback Widget.
-
-## Docker Configuration
-The application is fully containerized. The docker-compose.yml includes a mandatory healthcheck to ensure service availability before the portal is marked as Ready.
-
-## Testing Attributes
-All components are tagged with specific data-testid attributes for automated evaluation:
-
-sidebar
-
-search-input
-
-version-selector
-
-theme-toggle
-
-table-of-contents
-
-language-switcher
-
-feedback-input
-
-## Content Structure
-Markdown files are organized by language and version:
-
-_docs/[locale]/[version]/[slug].md
+Navigation: A dynamic Sidebar that automatically scans the Docs folder to create buttons for every .md file.
